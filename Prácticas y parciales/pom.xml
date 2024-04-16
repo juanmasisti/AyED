@@ -12,4 +12,12 @@
         <exec.mainClass>com.mycompany.practica1b.Practica1B</exec.mainClass>
     </properties>
     <name>AyED</name>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.2</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
 </project>
