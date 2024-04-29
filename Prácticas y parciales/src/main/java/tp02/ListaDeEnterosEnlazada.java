@@ -1,6 +1,5 @@
 package tp02;
 
-
 public class ListaDeEnterosEnlazada extends ListaDeEnteros {
 	private NodoEntero inicio;
 	private NodoEntero actual;

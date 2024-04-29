@@ -1,26 +1,31 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package tp02;
 
-/**
- *
- * @author Juanma
- */
 public class TestListaDeEnterosConArreglos {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        ListaDeEnterosConArreglos lista = new ListaDeEnterosConArreglos();
-        int i;
-        for (i=0;i<=2;i++){
-            lista.agregarFinal(i+1);
-            System.out.println("Posicion " + i +": " + lista.elemento(i+1));
+	public static void main(String[] args) {
+		ListaDeEnterosConArreglos obj = new ListaDeEnterosConArreglos ();
+        if (args.length  == 0){
+       	 System.out.println("El programa se ejecutó sin parametros");
         }
-        System.out.println("Tamaño de la lista: " + lista.tamanio());
-    }
-    
+        else if (args.length > 1) {
+    		int num = 0;
+    		Integer numero;
+        	while (num < args.length) {
+			numero = Integer.parseInt(args[num]);
+			num++;
+			obj.agregarFinal(numero);
+        	}
+		}
+		obj.comenzar();
+		while (!obj.fin()) {
+			System.out.println(obj.proximo());
+		}
+	}	
 }
+
+/*1.4. ¿Qué diferencia encuentra entre las implementaciones de los puntos anteriores? 
+La diferencia es que uno la lista de enteros enlazada con un objeto llamado NODO donde se almacena la informacion, mientras que en la de arreglos se almacena en un arreglo propio
+de la clase.
+El arreglo tiene un limite, la lista no.
+
+*/

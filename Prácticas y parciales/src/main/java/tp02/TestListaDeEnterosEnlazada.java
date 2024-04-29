@@ -1,26 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package tp02;
 
-/**
- *
- * @author Juanma
- */
-public class TestListaDeEnterosEnlazada {
+import java.util.Scanner;
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        ListaDeEnterosEnlazada lista = new ListaDeEnterosEnlazada();
-        int i;
-        for (i=0;i<=2;i++){
-            lista.agregarFinal(i+1);
-            System.out.println("Posicion " + i +": " + lista.elemento(i+1));
-        }
-        System.out.println("Tamaño de la lista: " + lista.tamanio());
-    }
-    
+public class TestListaDeEnterosEnlazada {
+	public static void inverso (ListaDeEnteros lista, int puntero) {
+		if (puntero <= lista.tamanio()) {
+			TestListaDeEnterosEnlazada.inverso(lista, puntero+1);
+			System.out.println(lista.elemento(puntero));
+		}
+	}
+
+	public static void main(String[] args) {
+		ListaDeEnterosEnlazada obj = new ListaDeEnterosEnlazada ();
+		Scanner s = new Scanner (System.in);
+		System.out.println("INGRESE NUMEROS: ");
+		int num = s.nextInt();	
+		while (num  != -1) {
+			obj.agregarFinal(num);
+			num = s.nextInt();	
+		}
+		s.close();
+		obj.comenzar();
+		while (!obj.fin()) {
+			System.out.println(obj.proximo());
+		} 
+	}	
 }
